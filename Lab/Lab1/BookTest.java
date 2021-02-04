@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * A JUnit test class for the Book class.
@@ -42,5 +43,27 @@ public class BookTest {
     public void testAuthorYear() {
         assertEquals(1965, harry.getAuthor().getYearOfBirth());
     }
+
+    @Test
+    public void testBookString(){
+        String expected;
+        expected = "Title: Harry Potter\nAuthor: J.K. Rowling\n" + "Price: 50.00";
+        assertEquals(expected, harry.toString());
+    }
+
+    @Test
+    public void testDiscount(){
+        float discountedPrice = harry.salePrice(20);
+        assertEquals(40.0d, discountedPrice, 0.01);
+    }
+    /*@Test
+    public void testDiscountBook(){
+        Book discountedBook = harry.discountBook(20);
+        assertTrue(harry.sameAuthor(discountedBook));
+        assertEquals(harry.getTitle(), discountedBook.getTitle());
+        assertEquals(40f, discountedBook.getPrice(), 0.01);
+    }
+
+     */
 
 }

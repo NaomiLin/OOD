@@ -44,4 +44,9 @@ public class PersonTest {
     public void testEmail() {
         assertEquals(email, john.getEmailAdd());
     }
+
+    @Test
+    public void testPersonString(){
+        assertEquals("John Doe", john.toString());
+    }
 }

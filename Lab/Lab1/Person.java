@@ -87,4 +87,32 @@ public class Person {
     public Email getEmailAdd() {
         return this.emailAdd;
     }
+
+    /**
+     * return a string representation of this person with first and last name
+     *
+     * @return a formatted string
+     */
+    public String toString() {
+        /*
+         Fields
+         this.firstName: String
+         this.lastName: String
+         this.yearOfBirth: int
+         */
+        return firstName + " " + lastName;
+    }
+    /**
+     * check if this person is the same as the person in the argument.
+     * two persons are the same iff they have the same first and last
+     * names and the same years of birth
+     * @param other the other person to be compared to
+     * @Return true if this person is the same as other, false otherwise
+     */
+    public boolean same(Person other) {
+        return this.firstName.equals(other.firstName)
+                && this.lastName.equals(other.lastName)
+                && this.yearOfBirth == other.yearOfBirth;
+    }
+
 }
